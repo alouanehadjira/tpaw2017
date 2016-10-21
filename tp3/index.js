@@ -3,4 +3,6 @@ $(function(){
     {
     $(".modal").modal("show");
   };
+    else
+        return true;
 });
