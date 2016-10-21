@@ -1,6 +1,6 @@
 $(function(){
-    if($("#Nom").val()=='')
-    {
+    $("#btnValidate").click(function(){
+    
     $(".modal").modal("show");
     };
 });
