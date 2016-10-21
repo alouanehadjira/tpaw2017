@@ -4,5 +4,5 @@ $(function(){
     $(".modal").modal("show");
   };
     else{
-        nom= true;}
+        Nom= true;}
 });
