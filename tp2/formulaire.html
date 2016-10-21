@@ -1,0 +1,44 @@
+<html>
+
+<head>
+<script type="text/javascript"src="formulaire.js"></script>
+<link rel="stylesheet" href="formulaire.css"/>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+</head>
+
+<body>
+<h1><b> Saisie d'une fiche"personne"</h1></p>
+</br>
+<form id="formulaire" action="traitement.php" method="post">
+
+<table border="0" width=100% >
+<tr><th>
+</br>Nom </th> <th></br><input type="text" id="nom" placeholder="saisir le nom"/></th></tr> 
+<tr><th>
+</br>Prénom </th> <th></br> <input type="text" id="prenom"/></th></tr>
+<tr><th></br>Date de naissance</th> <th> </br><input type="date" id="date"  placeholder="JJ/MM/AAAA"/><th></tr>
+<tr><th></br>Adresse</th> <th> </br><input type="adresse" id="adresse"/><th></tr>
+<tr><th></br>Mail</th> <th></br> <input type="Mail" id="Mail"/><th></tr>
+
+<tr><th></br>  </th> <th></br><input type="button" value="valider" onclick="validation();"></th></tr>
+</table>
+
+</form>
+
+<div id="error"> </div>
+<div id="resultat"> </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
