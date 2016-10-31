@@ -1,1 +1,5 @@
-var val = document.getElementById(nom).value;
+function validation(){
+if(document.)
+
+
+}
