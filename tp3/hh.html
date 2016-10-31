@@ -1,0 +1,38 @@
+<html>
+	<head>
+		 
+		
+		<script type="text/javascript">
+			function validation(){
+				if (document.hello.email.value==""){
+					alert("veuillez saisir votre nom");
+					return false;
+				}
+				else
+				{
+					return true;
+				}
+			}
+			
+			
+		</script>
+	</head>
+	<body>
+	
+	<form name="hello" onsubmit="validation[]"> 
+  <div class="form-group">
+    <label for="nom">nom</label>
+    <input type="text" class="form-control" id="nom" placeholder="nom" name="nom">
+  </div>
+  <div class="form-group">
+    <label for="prenom">Prenom</label>
+    <input type="text" class="form-control" id="prenom" placeholder="Prenom">
+  </div>
+  
+  
+  <input type="submit" value="valider" id="submit" > 
+</form>
+	
+		
+	</body>
+</html>
