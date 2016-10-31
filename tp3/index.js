@@ -1,6 +1,1 @@
-$(function(){
-   if $("#Nom").val()==''){
-    
-    $(".modal").modal("show");
-    };
-});
+var val = document.getElementById(nom).value;
