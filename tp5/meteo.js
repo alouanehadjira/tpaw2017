@@ -3,10 +3,10 @@ window.onload = function(){
     document.getElementById("searchCity").addEventListener("submit", function(event){
        
         var city = document.getElementById("city").value;
-         
+         event.preventDefault();
         searchCity(city);
        });
-    
+     }
 /*    document.getElementById("gps").addEventListener("click", function(event){
         getLocation();
        });*/
@@ -70,7 +70,7 @@ function searchLatLng(_lat, _lng){
     //A compléter dans la suite du TP
 }
 
- }
+
 
 
 
