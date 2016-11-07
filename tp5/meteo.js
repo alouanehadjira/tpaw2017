@@ -10,7 +10,7 @@ window.onload = function(){
 /*    document.getElementById("gps").addEventListener("click", function(event){
         getLocation();
        });*/
-  }
+ 
     
 function searchCity(_city){
  
@@ -70,7 +70,7 @@ function searchLatLng(_lat, _lng){
     //A compléter dans la suite du TP
 }
 
-
+ }
 
 
 
