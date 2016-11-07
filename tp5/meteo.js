@@ -3,8 +3,8 @@ window.onload = function(){
     document.getElementById("searchCity").addEventListener("submit", function(event){
        
         var city = document.getElementById("city").value;
-         document.getElementById("id").innerHTML = '<p>'+ city+' </p>';
-       // searchCity(city);
+         
+        searchCity(city);
        });
     
     document.getElementById("gps").addEventListener("click", function(event){
@@ -15,7 +15,7 @@ window.onload = function(){
 function searchCity(_city){
  
     
-    var request=new XMLHttpRequest();
+  /*  var request=new XMLHttpRequest();
     request.open("get","http://api.openweathermap.org/data/2.5/weather?q="+_city+"&appid=026b817616733447ff9cf585780ff7af",true);
     request.onload =function(){
         if(request.status >=200 && request.status <400){
@@ -29,7 +29,8 @@ function searchCity(_city){
                 var cloud = responseJSON. Cloudiness;
                 var wind = responseJSON.wind.speed;
         }
-    }
+    }*/
+    document.getElementById("id").innerHTML = '<p>'+ _city+' </p>';
 }
 function getLocation() {
     if (navigator.geolocation) {
