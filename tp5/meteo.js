@@ -27,7 +27,7 @@ function searchCity(_city){
         var wind = responseJSON.wind.speed;
     }
         
-        document.getElementById("GPS").addEventListener("click", function(event){
+        
 function searchLatLng(_lat, _ lng){
     console.log(searchLatLng,"Hello from "+_lat+","+lng);
     //A compléter dans la suite du TP
