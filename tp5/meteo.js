@@ -13,7 +13,12 @@ function searchCity(_city){
     request.onload =function(){
     if(request.status >=200 && request.status <400){
     // Success!
-    var resp = request.responseText;
+   var responseJSON = JSON.parse(request.responseText);
+        var icon = responseJSON.weather.icon;
+        var temps = responseJSON.weather.main;
+        var humidity = responseJSON.main.humidity;
+        var cloud = responseJSON. Cloudiness;
+        var wind = responseJSON.wind.speed;
     }
         
         
