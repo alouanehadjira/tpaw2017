@@ -3,8 +3,8 @@ window.onload = function(){
     document.getElementById("searchCity").addEventListener("submit", function(event){
        
         var city = document.getElementById("city").value;
-        
-        searchCity(city);
+         document.getElementById("id").innerHTML = '<p>'+ city+' </p>';
+       // searchCity(city);
        });
     
     document.getElementById("gps").addEventListener("click", function(event){
