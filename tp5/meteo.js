@@ -21,6 +21,8 @@ function searchCity(_city){
         if(request.status >=200 && request.status <400){
             // Success!
            var responseJSON = JSON.parse(request.responseText);
+                var result = responseJSON.result.city;
+            document.getElementById("result").innerHTML = result;
                 var icon = responseJSON.weather.icon;
                 document.getElementById("icon").innerHTML = '<img src="http://openweathermap.org/img/w/'+icon+'.png">';
                 var temps = responseJSON.weather.main;
