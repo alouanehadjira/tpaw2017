@@ -1,10 +1,14 @@
 
 window.onload = function(){
     document.getElementById("searchCity").addEventListener("submit", function(event){
-event.preventDefault(); // pour annuler le rechargement de la page
+        event.preventDefault(); // pour annuler le rechargement de la page
         var city = document.getElementById("city").value;
         
-      searchCity(city);
+        searchCity(city);
+       });
+    
+    document.getElementById("gps").addEventListener("click", function(event){
+        getLocation();
        });
   }
     
