@@ -8,16 +8,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
-        
-        <!-- Code à dé-commenter si besoin de fichier CSS ou JS -->
-        <!--<link rel="stylesheet" href="style.css">-->
-        <!--<script src="main.js"></script>-->
+        <link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.min.css">
+        <script src="meteo.js"></script>
     </head>
     <body>        
         <h1>TP5</h1>
         <!-- Add your site or application content here -->
         <p>Hello world! This is HTML5 Boilerplate.</p>
         <img src="../galilee.png" alt="Logo Galilee"/>
+        
+        <form id=”searchCity”>
+    <input type=”search” id=”city” required placeholder=”Votre ville, Paris, NY...”/>
+    <input type=”submit”/>
+</form>
+<div id=”result”></div>
     </body>
 </html>
