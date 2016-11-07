@@ -7,9 +7,9 @@ window.onload = function(){
         searchCity(city);
        });
      }
-/*    document.getElementById("gps").addEventListener("click", function(event){
+     document.getElementById("gps").addEventListener("click", function(event){
         getLocation();
-       });*/
+       });
  
     
 function searchCity(_city){
