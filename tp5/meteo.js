@@ -1,7 +1,7 @@
 
 window.onload = function(){
     document.getElementById("searchCity").addEventListener("submit", function(event){
-        event.preventDefault(); // pour annuler le rechargement de la page
+       
         var city = document.getElementById("city").value;
         
         searchCity(city);
@@ -13,7 +13,7 @@ window.onload = function(){
   }
     
 function searchCity(_city){
-    console.log("searchCity","Hello from "+_city);
+ 
     
     var request=new XMLHttpRequest();
     request.open("get","http://api.openweathermap.org/data/2.5/weather?q="+_city+"&appid=026b817616733447ff9cf585780ff7af",true);
