@@ -6,6 +6,12 @@ event.preventDefault(); // pour annuler le rechargement de la page
       searchCity(city);
        });
   }
+
+    
+    
+    
+    
+    
 function searchCity(_city){
     console.log("searchCity","Hello from "+_city);
     var resuest=new XMLHttpRequest();
@@ -21,7 +27,7 @@ function searchCity(_city){
         var wind = responseJSON.wind.speed;
     }
         
-        
+        ocument.getElementById("GPS").addEventListener("click", function(event){
 function searchLatLng(_lat, _ lng){
     console.log(searchLatLng,"Hello from "+_lat+","+lng);
     //A compléter dans la suite du TP
