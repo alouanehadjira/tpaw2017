@@ -3,14 +3,10 @@ window.onload = function(){
     document.getElementById("searchCity").addEventListener("submit", function(event){
 event.preventDefault(); // pour annuler le rechargement de la page
         var city = document.getElementById("city").value;
+        console.log("searchCity","Hello from "+_city);
       searchCity(city);
        });
   }
-
-    
-    
-    
-    
     
 function searchCity(_city){
     console.log("searchCity","Hello from "+_city);
