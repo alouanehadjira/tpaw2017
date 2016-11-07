@@ -22,7 +22,7 @@ function searchCity(_city){
             // Success!
            var responseJSON = JSON.parse(request.responseText);
                 var icon = responseJSON.weather.icon;
-                document.getElementById("id").innerHTML = '<p>'+ _city+' </p>';
+                document.getElementById("icon").innerHTML = '<img src="http://openweathermap.org/img/w/'+icon+'.png">';
                 var temps = responseJSON.weather.main;
                  document.getElementById("temps").innerHTML = temps + " K°";
                 var humidity = responseJSON.main.humidity;
