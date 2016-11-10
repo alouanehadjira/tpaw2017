@@ -19,6 +19,7 @@ window.onload = function() {
               }
     });
     
+}
 function showPosition(position) {
     var latlon = position.coords.latitude + "," + position.coords.longitude;
          searchLatLng(position.coords.latitude,position.coords.longitude);
