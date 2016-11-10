@@ -59,15 +59,15 @@ function searchLatLng(_lat,_lng){
              
 
               var temperature= responseJSON.temperature.value;              
-             document.getElementById("result").innerHTML ="<h2>"+ responseJSON.name+ "</h2>" ;
+           //  document.getElementById("result").innerHTML ="<h2>"+ responseJSON.name+ "</h2>" ;
 
-             document.getElementById("temps").innerHTML=  ; 
+          //   document.getElementById("temps").innerHTML=  ; 
              
-            document.getElementById("icon").innerHTML= "<img src=http://openweathermap.org/img/w/"+responseJSON.weather[0].icon +".png />";
-              document.getElementById("temperature").innerHTML=responseJSON.main.temp; 
+          //  document.getElementById("icon").innerHTML= "<img src=http://openweathermap.org/img/w/"+responseJSON.weather[0].icon +".png />";
+             // document.getElementById("temperature").innerHTML=responseJSON.main.temp; 
              
-               document.getElementById("cloud").innerHTML=responseJSON.clouds.all; 
-              document.getElementById("humidity").innerHTML= responseJSON.main.humidity + " % ";
+              // document.getElementById("cloud").innerHTML=responseJSON.clouds.all; 
+             // document.getElementById("humidity").innerHTML= responseJSON.main.humidity + " % ";
            }else {
                  document.getElementById
            }
