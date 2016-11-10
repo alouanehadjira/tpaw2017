@@ -6,54 +6,11 @@ window.onload = function() {
       var city = document.getElementById("city").value;
       searchCity(city);   
     });
-
-
-    document.getElementById("gps").addEventListener("click", function(){  
-              // ici votre code pour demander la géolocalisation à l’utilisateur       
-               // et qui appelera la fonction searchLatLng(_lat, _ lng)
-         
-            if (navigator.geolocation) {
-              navigator.geolocation.getCurrentPosition(showPosition, showError);
-              } else {
-                x.innerHTML = "Geolocation is not supported by this browser.";
-              }
-
-function showPosition(position) {
-    var latlon = position.coords.latitude + "," + position.coords.longitude;
-         searchLatLng(position.coords.latitude,position.coords.longitude);
-}
-
-function showError(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            x.innerHTML = "User denied the request for Geolocation."
-            break;
-        case error.POSITION_UNAVAILABLE:
-            x.innerHTML = "Location information is unavailable."
-            break;
-        case error.TIMEOUT:
-            x.innerHTML = "The request to get user location timed out."
-            break;
-        case error.UNKNOWN_ERROR:
-            x.innerHTML = "An unknown error occurred."
-            break;
-    }
-}
- });
-
-}
-      
-function searchCity(_city){  
+    
+    function searchCity(_city){  
        console.log("searchCity","Hello from "+_city);    //A compléter dans la suite du TP
-     
-}
-
-
-function searchLatLng(_lat,_lng){  
-       console.log(searchLatLng,"Hello from "+_lat+","+_lng);    //A compléter dans la suite du TP
-         
-       var request = new XMLHttpRequest();
-       request.open("GET","http://api.openweathermap.org/data/2.5/weather?lat="+_lat+"&lon="+_lng+"&appid=a86ef65f3662cce72b37f1b8af722d94",true);
+         var request = new XMLHttpRequest();
+       request.open("get","http://api.openweathermap.org/data/2.5/weather?q="+_city+"&appid=026b817616733447ff9cf585780ff7af",true);
 
        request.onload=function (){
            if (request.status >= 200 && request.status <400){
@@ -91,6 +48,51 @@ function searchLatLng(_lat,_lng){
 }
 
 
+     
+}
+    
+    
+    
+    document.getElementById("gps").addEventListener("click", function(){  
+         
+            if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(showPosition, showError);
+              } else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
+              }
+
+function showPosition(position) {
+    var latlon = position.coords.latitude + "," + position.coords.longitude;
+         searchLatLng(position.coords.latitude,position.coords.longitude);
+}
+
+function showError(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+            x.innerHTML = "User denied the request for Geolocation."
+            break;
+        case error.POSITION_UNAVAILABLE:
+            x.innerHTML = "Location information is unavailable."
+            break;
+        case error.TIMEOUT:
+            x.innerHTML = "The request to get user location timed out."
+            break;
+        case error.UNKNOWN_ERROR:
+            x.innerHTML = "An unknown error occurred."
+            break;
+    }
+}
+ });
+
+}
+      
+
+
+
+function searchLatLng(_lat,_lng){  
+       console.log(searchLatLng,"Hello from "+_lat+","+_lng);    //A compléter dans la suite du TP
+         
+}
 
 
 
