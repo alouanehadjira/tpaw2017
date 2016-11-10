@@ -1,34 +1,42 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>TP5</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-      
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> 
-        <script src= "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-      
+    <title>TP5 </title>
+  <meta charset="utf-8" />
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="meteo.js"></script>
-    </head>
-    <body>        
-       
-        <form id="searchCity">
-            <button type="button" class="btn btn-warning" id="gps">GPS</button>
-            <input type="text" id="city" />
-           <button type="submit" id="searchCity" class="btn btn-primary">Recherche</button>
-        </form>
-        <div id="result"></div>
-        <div id="temps"></div>
-        <div id="icon"></div>
-        <div id="temperature"></div>
-        <div id="humidity"></div>
-        <div id="nuage"></div>
-        <div id="vent"></div>
-        
-    </body>
+
+
+<script>
+
+</script>             
+
+
+
+</head>
+   <body>
+    <form id="searchCity" >  
+       <button type="button" class="btn btn-warning" id="gps">GPS</button>
+         <input type="search"  id="city" required placeholder="ville"/>    
+         <input type="submit" class="btn btn-primary" value="Recherche"/>
+    </form>  
+
+<div class="container">
+   <div class="row">   
+      <div class="col-sm-6"> 
+          <div id="result"></div>
+          <div id="ville"></div>
+          <div id="temps"></div>
+          <div id="icon"></div>
+         <div id="temperature" ></div>
+          <div id="cloud" ></div>
+          <div id="humidite"></div>
+      </div>  
+   </div>
+</div>
+
+<h2></h2> 
+
+
+</body>
 </html>
