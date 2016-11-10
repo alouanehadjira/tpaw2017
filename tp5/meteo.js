@@ -78,5 +78,5 @@ function searchCity(_city){
        };
 
        request.send();
-}
+}*/
 
