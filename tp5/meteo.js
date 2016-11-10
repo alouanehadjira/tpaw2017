@@ -46,7 +46,37 @@ function showError(error) {
       
 function searchCity(_city){  
        console.log("searchCity","Hello from "+_city);    //A compléter dans la suite du TP
-     
+          document.getElementById("result").innerHTML ="<h2>"+ _city+"</h2>" ;
+    
+       var request = new XMLHttpRequest();
+       request.open("GET","http://api.openweathermap.org/data/2.5/weather?q="+_city+"&appid=026b817616733447ff9cf585780ff7af",true);
+
+       request.onload=function (){
+           if (request.status >= 200 && request.status <400){
+               // Success!
+              var responseJSON = JSON.parse(request.responseText);
+             
+
+            //     var temperature= responseJSON.temperature.value;              
+             document.getElementById("result").innerHTML ="<h2>"+ responseJSON.name+ "</h2>" ;
+
+             //document.getElementById("temps").innerHTML=  ; 
+             
+             document.getElementById("icon").innerHTML= "<img src=http://openweathermap.org/img/w/"+responseJSON.weather[0].icon +".png />";
+               document.getElementById("temperature").innerHTML=responseJSON.main.temp; 
+             
+               document.getElementById("cloud").innerHTML=responseJSON.clouds.all; 
+               document.getElementById("humidity").innerHTML= responseJSON.main.humidity + " % ";
+           }else {
+                // document.getElementById
+           }
+       };
+
+       request.onerror=function(){
+
+       };
+
+       request.send();
 }
 
 
