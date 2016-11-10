@@ -8,35 +8,24 @@ window.onload = function() {
     });
     
     function searchCity(_city){  
-       console.log("searchCity","Hello from "+_city);    //A compléter dans la suite du TP
+       console.log("searchCity","Hello from "+_city);    
          var request = new XMLHttpRequest();
-       request.open("get","http://api.openweathermap.org/data/2.5/weather?q="+_city+"&appid=026b817616733447ff9cf585780ff7af",true);
+       request.open("get","http://api.openweathermap.org/data/2.5/weather?q="+_city+"&appid=026b817616733447ff9cf585780ff7af",true();
 
        request.onload=function (){
            if (request.status >= 200 && request.status <400){
-               // Success!
+             
               var responseJSON = JSON.parse(request.responseText);
-             
-              var temp = responseJSON.main.temp; 
-              var icon = responseJSON.weather.icon; 
-              
-          //   var temp = responseJSON.weather.main;
-             var humidity = responseJSON.main.humidity;
-               
-                 var wind = responseJSON.wind.speed;
-                 var tomporaire=responseJSON.weather[0].icon;
-            //     var temperature= responseJSON.temperature.value;              
-             document.getElementById("result").innerHTML ="<h2>"+ responseJSON.name+ "</h2>" ;
-
-             //document.getElementById("temps").innerHTML=  ; 
-             
-             document.getElementById("icon").innerHTML= "<img src=http://openweathermap.org/img/w/"+tomporaire +".png />";
+             document.getElementById("result").innerHTML ="<h2>"+ responseJSON.name+ "</h2>"
+             document.getElementById("icon").innerHTML= "<img src=http://openweathermap.org/img/w/"+temporaire +".png />";
+      
                document.getElementById("temperature").innerHTML=responseJSON.main.temp; 
              
                document.getElementById("cloud").innerHTML=responseJSON.clouds.all; 
-               document.getElementById("humidite").innerHTML= responseJSON.main.humidity + " % ";
-           }else {
-                // document.getElementById
+               document.getElementById("humidity").innerHTML= responseJSON.main.humidity + " % ";
+           }
+               else {
+                
            }
        };
 
@@ -45,14 +34,14 @@ window.onload = function() {
        };
 
        request.send();
-}
+                 }
 
 
-     
+  function searchLatLng(_lat,_lng){  
+       console.log(searchLatLng,"Hello from "+_lat+","+_lng);    //A compléter dans la suite du TP
+         
 }
-    
-    
-    
+  
     document.getElementById("gps").addEventListener("click", function(){  
          
             if (navigator.geolocation) {
@@ -82,17 +71,13 @@ function showError(error) {
             break;
     }
 }
- });
 
 }
       
 
 
 
-function searchLatLng(_lat,_lng){  
-       console.log(searchLatLng,"Hello from "+_lat+","+_lng);    //A compléter dans la suite du TP
-         
-}
+
 
 
 
