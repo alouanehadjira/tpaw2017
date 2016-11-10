@@ -41,9 +41,9 @@ function searchCity(_city){
 
        };
 
-       request.send();
+       request.send();}}
 }
-}
+
    
 /*function searchLatLng(_lat,_lng){  
        console.log(searchLatLng,"Hello from "+_lat+","+_lng);    //A compléter dans la suite du TP
