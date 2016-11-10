@@ -26,7 +26,7 @@ function showPosition(position) {
 }
 
 function showError(error) {
-    var x = document.getElementById("result");
+    //var x = document.getElementById("result");
     switch(error.code) {
         case error.PERMISSION_DENIED:
             x.innerHTML = "User denied the request for Geolocation."
