@@ -11,7 +11,7 @@ window.onload = function() {
     
 function searchCity(_city){  
        console.log("searchCity","Hello from "+_city);    //A compléter dans la suite du TP
-       //   document.getElementById("result").innerHTML ="<h2>"+ _city+"</h2>" ;
+          document.getElementById("result").innerHTML ="<h2>"+ _city+"</h2>" ;
     
        var request = new XMLHttpRequest();
        request.open("GET","https://demo.bilelz.fr/owmap/?q="+_city+"&appid=026b817616733447ff9cf585780ff7af",true);
@@ -42,7 +42,7 @@ function searchCity(_city){
        };
 
        request.send();
-}
+
 
    
 function searchLatLng(_lat,_lng){  
