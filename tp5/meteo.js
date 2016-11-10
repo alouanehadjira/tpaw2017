@@ -17,7 +17,8 @@ window.onload = function() {
               } else {
                 x.innerHTML = "Geolocation is not supported by this browser.";
               }
-
+    });
+    
 function showPosition(position) {
     var latlon = position.coords.latitude + "," + position.coords.longitude;
          searchLatLng(position.coords.latitude,position.coords.longitude);
@@ -39,9 +40,7 @@ function showError(error) {
             break;
     }
 }
- });
 
-}
       
 function searchCity(_city){  
        console.log("searchCity","Hello from "+_city);    //A compléter dans la suite du TP
@@ -60,20 +59,13 @@ function searchLatLng(_lat,_lng){
                // Success!
               var responseJSON = JSON.parse(request.responseText);
              
-              var temp = responseJSON.main.temp; 
-              var icon = responseJSON.weather.icon; 
-              
-          //   var temp = responseJSON.weather.main;
-             var humidity = responseJSON.main.humidity;
-               
-                 var wind = responseJSON.wind.speed;
-                 var tomporaire=responseJSON.weather[0].icon;
+
             //     var temperature= responseJSON.temperature.value;              
              document.getElementById("result").innerHTML ="<h2>"+ responseJSON.name+ "</h2>" ;
 
              //document.getElementById("temps").innerHTML=  ; 
              
-             document.getElementById("icon").innerHTML= "<img src=http://openweathermap.org/img/w/"+tomporaire +".png />";
+             document.getElementById("icon").innerHTML= "<img src=http://openweathermap.org/img/w/"+responseJSON.weather[0].icon +".png />";
                document.getElementById("temperature").innerHTML=responseJSON.main.temp; 
              
                document.getElementById("cloud").innerHTML=responseJSON.clouds.all; 
