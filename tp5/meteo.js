@@ -8,42 +8,7 @@ window.onload = function() {
     });
 
 
-    document.getElementById("gps").addEventListener("click", function(){  
-              // ici votre code pour demander la géolocalisation à l’utilisateur       
-               // et qui appelera la fonction searchLatLng(_lat, _ lng)
-         
-            if (navigator.geolocation) {
-              navigator.geolocation.getCurrentPosition(showPosition, showError);
-              } else {
-                x.innerHTML = "Geolocation is not supported by this browser.";
-              }
-    });
     
-}
-function showPosition(position) {
-    var latlon = position.coords.latitude + "," + position.coords.longitude;
-         searchLatLng(position.coords.latitude,position.coords.longitude);
-}
-
-function showError(error) {
-    //var x = document.getElementById("result");
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            x.innerHTML = "User denied the request for Geolocation."
-            break;
-        case error.POSITION_UNAVAILABLE:
-            x.innerHTML = "Location information is unavailable."
-            break;
-        case error.TIMEOUT:
-            x.innerHTML = "The request to get user location timed out."
-            break;
-        case error.UNKNOWN_ERROR:
-            x.innerHTML = "An unknown error occurred."
-            break;
-    }
-}
-
-      
 function searchCity(_city){  
        console.log("searchCity","Hello from "+_city);    //A compléter dans la suite du TP
        //   document.getElementById("result").innerHTML ="<h2>"+ _city+"</h2>" ;
@@ -79,6 +44,40 @@ function searchCity(_city){
        request.send();
 }
 
+    var geo = document.getElementById("gps");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+        geo.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position){
+   alert('goooooooo');
+    var latlon = position.coords.latitude + "," + position.coords.longitude;
+    var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="
+    +latlon+"&zoom=14&size=400x300&sensor=false";
+    document.getElementById("map").innerHTML = "<img src='"+img_url+"'>";
+}
+
+function showError(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+            geo.innerHTML = "User denied the request for Geolocation."
+            break;
+        case error.POSITION_UNAVAILABLE:
+            geo.innerHTML = "Location information is unavailable."
+            break;
+        case error.TIMEOUT:
+            geo.innerHTML = "The request to get user location timed out."
+            break;
+        case error.UNKNOWN_ERROR:
+            geo.innerHTML = "An unknown error occurred."
+            break;
+    }
+}
 
 function searchLatLng(_lat,_lng){  
        console.log(searchLatLng,"Hello from "+_lat+","+_lng);    //A compléter dans la suite du TP
