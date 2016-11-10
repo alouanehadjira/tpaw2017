@@ -33,7 +33,7 @@ function searchCity(_city){
                document.getElementById("cloud").innerHTML=responseJSON.clouds.all; 
                document.getElementById("humidity").innerHTML= responseJSON.main.humidity + " % ";
            }else {
-                // document.getElementById
+                 document.getElementById
            }
        };
 
@@ -44,41 +44,7 @@ function searchCity(_city){
        request.send();
 }
 
-    var geo = document.getElementById("gps");
-
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition, showError);
-    } else {
-        geo.innerHTML = "Geolocation is not supported by this browser.";
-    }
-}
-
-function showPosition(position){
-   alert('goooooooo');
-    var latlon = position.coords.latitude + "," + position.coords.longitude;
-    var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="
-    +latlon+"&zoom=14&size=400x300&sensor=false";
-    document.getElementById("map").innerHTML = "<img src='"+img_url+"'>";
-}
-
-function showError(error) {
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-            geo.innerHTML = "User denied the request for Geolocation."
-            break;
-        case error.POSITION_UNAVAILABLE:
-            geo.innerHTML = "Location information is unavailable."
-            break;
-        case error.TIMEOUT:
-            geo.innerHTML = "The request to get user location timed out."
-            break;
-        case error.UNKNOWN_ERROR:
-            geo.innerHTML = "An unknown error occurred."
-            break;
-    }
-}
-
+   
 function searchLatLng(_lat,_lng){  
        console.log(searchLatLng,"Hello from "+_lat+","+_lng);    //A compléter dans la suite du TP
         document.getElementById("result").innerHTML ="<h2>"+ _lat+","+ _lng+"</h2>" ;
@@ -92,12 +58,12 @@ function searchLatLng(_lat,_lng){
               var responseJSON = JSON.parse(request.responseText);
              
 
-             //   var temperature= responseJSON.temperature.value;              
-            // document.getElementById("result").innerHTML ="<h2>"+ responseJSON.name+ "</h2>" ;
+              var temperature= responseJSON.temperature.value;              
+             document.getElementById("result").innerHTML ="<h2>"+ responseJSON.name+ "</h2>" ;
 
              //document.getElementById("temps").innerHTML=  ; 
              
-            // document.getElementById("icon").innerHTML= "<img src=http://openweathermap.org/img/w/"+responseJSON.weather[0].icon +".png />";
+            //document.getElementById("icon").innerHTML= "<img src=http://openweathermap.org/img/w/"+responseJSON.weather[0].icon +".png />";
             //   document.getElementById("temperature").innerHTML=responseJSON.main.temp; 
              
                //document.getElementById("cloud").innerHTML=responseJSON.clouds.all; 
