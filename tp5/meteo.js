@@ -45,7 +45,7 @@ function searchCity(_city){
 }
 
    
-/*function searchLatLng(_lat,_lng){  
+function searchLatLng(_lat,_lng){  
        console.log(searchLatLng,"Hello from "+_lat+","+_lng);    //A compléter dans la suite du TP
         document.getElementById("result").innerHTML ="<h2>"+ _lat+","+ _lng+"</h2>" ;
    
@@ -61,13 +61,13 @@ function searchCity(_city){
               var temperature= responseJSON.temperature.value;              
              document.getElementById("result").innerHTML ="<h2>"+ responseJSON.name+ "</h2>" ;
 
-             //document.getElementById("temps").innerHTML=  ; 
+             document.getElementById("temps").innerHTML=  ; 
              
-            //document.getElementById("icon").innerHTML= "<img src=http://openweathermap.org/img/w/"+responseJSON.weather[0].icon +".png />";
-            //   document.getElementById("temperature").innerHTML=responseJSON.main.temp; 
+            document.getElementById("icon").innerHTML= "<img src=http://openweathermap.org/img/w/"+responseJSON.weather[0].icon +".png />";
+              document.getElementById("temperature").innerHTML=responseJSON.main.temp; 
              
-               //document.getElementById("cloud").innerHTML=responseJSON.clouds.all; 
-             //  document.getElementById("humidity").innerHTML= responseJSON.main.humidity + " % ";
+               document.getElementById("cloud").innerHTML=responseJSON.clouds.all; 
+              document.getElementById("humidity").innerHTML= responseJSON.main.humidity + " % ";
            }else {
                  document.getElementById
            }
@@ -78,5 +78,5 @@ function searchCity(_city){
        };
 
        request.send();
-}*/
+}
 
