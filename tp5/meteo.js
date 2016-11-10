@@ -41,7 +41,7 @@ function searchCity(_city){
 
        };
 
-       request.send();}}
+       request.send();
 }
 
    
