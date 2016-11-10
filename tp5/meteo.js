@@ -1,76 +1,96 @@
 
-window.onload = function(){
+window.onload = function() {
+    
     document.getElementById("searchCity").addEventListener("submit", function(event){
-       
-        var city = document.getElementById("city").value;
-         event.preventDefault();
-        searchCity(city);
-       });
-     }
-     document.getElementById("gps").addEventListener("click", function(event){
-        getLocation();
-       });
- 
-    
-function searchCity(_city){
- 
-    
-  var request=new XMLHttpRequest();
-    request.open("get","http://api.openweathermap.org/data/2.5/weather?q="+_city+"&appid=026b817616733447ff9cf585780ff7af",true);
-    request.onload =function(){
-        if(request.status >=200 && request.status <400){
-            // Success!
-           var responseJSON = JSON.parse(request.responseText);
-                var result = responseJSON.result.city;
-            document.getElementById("result").innerHTML = result;
-                var icon = responseJSON.weather.icon;
-                document.getElementById("icon").innerHTML = '<img src="http://openweathermap.org/img/w/'+icon+'.png">';
-                var temps = responseJSON.weather.main;
-                 document.getElementById("temps").innerHTML = temps + " K°";
-                var humidity = responseJSON.main.humidity;
-                var cloud = responseJSON. Cloudiness;
-                var wind = responseJSON.wind.speed;
-        }
-    }
-   
-}
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition, showError);
-    } else {
-        document.getElementById("demo").innerHTML = "Geolocation is not supported by this browser.";
-    }
-}
+      event.preventDefault(); // pour annuler le rechargement de la page      
+      var city = document.getElementById("city").value;
+      searchCity(city);   
+    });
+
+
+    document.getElementById("gps").addEventListener("click", function(){  
+              // ici votre code pour demander la géolocalisation à l’utilisateur       
+               // et qui appelera la fonction searchLatLng(_lat, _ lng)
+         
+            if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(showPosition, showError);
+              } else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
+              }
 
 function showPosition(position) {
     var latlon = position.coords.latitude + "," + position.coords.longitude;
-    $("#inputAdresse3").val(latlon);
-
-    var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=14&size=400x300&sensor=false";
-    document.getElementById("demo").innerHTML = "<img src='"+img_url+"'>";
+         searchLatLng(position.coords.latitude,position.coords.longitude);
 }
 
 function showError(error) {
-    switch (error.code) {
+    switch(error.code) {
         case error.PERMISSION_DENIED:
-            document.getElementById("demo").innerHTML = "User denied the request for Geolocation."
+            x.innerHTML = "User denied the request for Geolocation."
             break;
         case error.POSITION_UNAVAILABLE:
-            document.getElementById("demo").innerHTML = "Location information is unavailable."
+            x.innerHTML = "Location information is unavailable."
             break;
         case error.TIMEOUT:
-            document.getElementById("demo").innerHTML = "The request to get user location timed out."
+            x.innerHTML = "The request to get user location timed out."
             break;
         case error.UNKNOWN_ERROR:
-            document.getElementById("demo").innerHTML = "An unknown error occurred."
+            x.innerHTML = "An unknown error occurred."
             break;
     }
 }
-        
-function searchLatLng(_lat, _lng){
-    console.log(searchLatLng,"Hello from "+_lat+","+_lng);
-    //A compléter dans la suite du TP
+ });
+
 }
+      
+function searchCity(_city){  
+       console.log("searchCity","Hello from "+_city);    //A compléter dans la suite du TP
+     
+}
+
+
+function searchLatLng(_lat,_lng){  
+       console.log(searchLatLng,"Hello from "+_lat+","+_lng);    //A compléter dans la suite du TP
+         
+       var request = new XMLHttpRequest();
+       request.open("GET","http://api.openweathermap.org/data/2.5/weather?lat="+_lat+"&lon="+_lng+"&appid=a86ef65f3662cce72b37f1b8af722d94",true);
+
+       request.onload=function (){
+           if (request.status >= 200 && request.status <400){
+               // Success!
+              var responseJSON = JSON.parse(request.responseText);
+             
+              var temp = responseJSON.main.temp; 
+              var icon = responseJSON.weather.icon; 
+              
+          //   var temp = responseJSON.weather.main;
+             var humidity = responseJSON.main.humidity;
+               
+                 var wind = responseJSON.wind.speed;
+                 var tomporaire=responseJSON.weather[0].icon;
+            //     var temperature= responseJSON.temperature.value;              
+             document.getElementById("result").innerHTML ="<h2>"+ responseJSON.name+ "</h2>" ;
+
+             //document.getElementById("temps").innerHTML=  ; 
+             
+             document.getElementById("icon").innerHTML= "<img src=http://openweathermap.org/img/w/"+tomporaire +".png />";
+               document.getElementById("temperature").innerHTML=responseJSON.main.temp; 
+             
+               document.getElementById("cloud").innerHTML=responseJSON.clouds.all; 
+               document.getElementById("humidite").innerHTML= responseJSON.main.humidity + " % ";
+           }else {
+                // document.getElementById
+           }
+       };
+
+       request.onerror=function(){
+
+       };
+
+       request.send();
+}
+
+
 
 
 
