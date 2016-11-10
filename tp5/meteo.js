@@ -81,7 +81,7 @@ function showError(error) {
 
 function searchLatLng(_lat,_lng){  
        console.log(searchLatLng,"Hello from "+_lat+","+_lng);    //A compléter dans la suite du TP
-        // document.getElementById("result").innerHTML ="<h2>"+ _lat+","+ _lng+"</h2>" ;
+        document.getElementById("result").innerHTML ="<h2>"+ _lat+","+ _lng+"</h2>" ;
    
        var request = new XMLHttpRequest();
       request.open("GET","https://demo.bilelz.fr/owmap/?lat="+_lat+"&lon="+_lng+"&appid=a86ef65f3662cce72b37f1b8af722d94",true);
@@ -103,7 +103,7 @@ function searchLatLng(_lat,_lng){
                //document.getElementById("cloud").innerHTML=responseJSON.clouds.all; 
              //  document.getElementById("humidity").innerHTML= responseJSON.main.humidity + " % ";
            }else {
-                // document.getElementById
+                 document.getElementById
            }
        };
 
