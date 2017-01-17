@@ -63,7 +63,7 @@ function searchCity(_city){
              //document.getElementById("temps").innerHTML=  ; 
              
              document.getElementById("icon").innerHTML= "<img src=http://openweathermap.org/img/w/"+responseJSON.weather[0].icon +".png />";
-               document.getElementById("temperature").innerHTML=responseJSON.main.temp; 
+               document.getElementById("temperature").innerHTML=responseJSON.main.temp-273; 
              
                document.getElementById("cloud").innerHTML=responseJSON.clouds.all; 
                document.getElementById("humidity").innerHTML= responseJSON.main.humidity + " % ";
